@@ -34,6 +34,7 @@ cat > kali-config/common/hooks/xfce.chroot << EOF
   systemctl enable ligthdm.service
   systemctl start lightdm.service
   xconf-query -c xsettings -p /Net/ThemeName -s "Matcha-dark-aliz"
+  xfconf-query -c xfwm4 -p /general/theme -s "Matcha-dark-aliz"
 EOF
 
 mkdir -p kali-config/common/debian-installer/
