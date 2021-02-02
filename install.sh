@@ -44,4 +44,4 @@ echo "d-i passwd/root-login boolean false" >> config/debian-installer/preseed.cf
 mkdir kali-config/common/packages.chroot/
 mv ../paquetes/ kali-config/common/packages.chroot/
 
-./build.sh -v
+./build.sh -v --dist chaquen_OS
