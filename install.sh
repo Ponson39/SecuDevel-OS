@@ -13,11 +13,14 @@ cat > kali-config/variant-default/package-lists/kali.list.chroot << EOF
   kali-debtags
   kali-archive-keyring
   debian-installer-launcher
-  dconf-tools
+  dconf-editor
   openssh-server
   kali-linux-core
   xfce4
-  light-dm
+  xfce4-terminal
+  xfce4-power-manager-plugins
+  lightdm
+  mousepad
   john
   debian-installer-launcher
   alsa-tools
@@ -68,4 +71,4 @@ mv paquetes/* kali-config/common/packages.chroot/
 
 echo se va a construir el paquete
 
-./build.sh -v
+./build.sh -v 
