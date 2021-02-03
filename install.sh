@@ -5,7 +5,6 @@ apt-get install git live-build cdebootstrap devscripts -y
 echo "Clonando live-build-config.git"
 git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 
-apt-get source debian-installer
 cd live-build-config
 
 cat > kali-config/variant-default/package-lists/kali.list.chroot << EOF
@@ -39,7 +38,7 @@ cat > kali-config/common/hooks/xfce.chroot << EOF
 EOF
 
 mkdir -p kali-config/common/debian-installer/
-cp ../debian-installer-*/build/preseed.cfg config/debian-installer/
+wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/raw/master/kali-linux-full-unattended.preseed -O kali-config/common/debian-installer/preseed.cfg
 sed -i 's/make-user boolean false/make-user boolean true/' config/debian-installer/preseed.cfg
 echo "d-i passwd/root-login boolean false" >> config/debian-installer/preseed.cfg
 
