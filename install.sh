@@ -59,4 +59,6 @@ cd ..
 mkdir config/common/packages.chroot/
 mv paquetes/* config/common/packages.chroot/
 
+echo se va a construir el paquete
+
 ./build.sh -v --dist chaquen_OS
