@@ -1,4 +1,4 @@
-#!/bin/bash/
+#!/bin/bash
 
 mkdir -p ~/temporal 
 cd temporal
@@ -41,6 +41,16 @@ mkdir -p kali-config/common/debian-installer/
 cp ../debian-installer-*/build/preseed.cfg config/debian-installer/
 sed -i 's/make-user boolean false/make-user boolean true/' config/debian-installer/preseed.cfg
 echo "d-i passwd/root-login boolean false" >> config/debian-installer/preseed.cfg
+
+touch ../paquetes/prueba.txt
+cd paquetes/
+cat > prueba.txt <<EOF
+    https://az764295.vo.msecnd.net/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code_1.52.1-1608136922_amd64.deb
+EOF
+
+wget -i prueba.txt
+
+cd ..
 
 mkdir kali-config/common/packages.chroot/
 mv ../paquetes/ kali-config/common/packages.chroot/
