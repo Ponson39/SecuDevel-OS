@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get install git live-build cdebootstrap devscripts -y
-
+echo "Clonando live-build-config.git"
 git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 
 apt-get source debian-installer
@@ -18,14 +18,16 @@ cat > kali-config/variant-default/package-lists/kali.list.chroot << EOF
   locales-all
   xorg
 EOF
-
+echo Añadiendo imagen a Wallpapers
 mkdir -p kali-config/common/includes.chroot/usr/share/wallpapers/kali/contents/images
 wget https://i.imgur.com/LEhta3r.jpg
 mv LEhta3r.jpg kali-config/common/includes.chroot/usr/share/wallpapers/kali/contents/images/logo.jpg
-
+echo Clonando tema GTK3
 mkdir -p kali-config/common/includes.chroot/usr/share/themes/
 git clone https://github.com/vinceliuice/Matcha-gtk-theme.git
-sh Matcha-gtk-theme/install.sh -d kali-config/common/includes.chroot/usr/share/themes/ -t aliz
+cd Matcha-gtk-theme
+sh Matcha-gtk-theme/install.sh -d ../kali-config/common/includes.chroot/usr/share/themes/ -t aliz
+cd ..
 
 cat > kali-config/common/hooks/xfce.chroot << EOF 
   #!/bin/bash
