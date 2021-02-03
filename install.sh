@@ -26,7 +26,8 @@ echo Clonando tema GTK3
 mkdir -p kali-config/common/includes.chroot/usr/share/themes/
 git clone https://github.com/vinceliuice/Matcha-gtk-theme.git
 cd Matcha-gtk-theme
-sh Matcha-gtk-theme/install.sh -d ../kali-config/common/includes.chroot/usr/share/themes/ -t aliz
+chmod a+x install.sh
+./install.sh -d ../kali-config/common/includes.chroot/usr/share/themes/ -t aliz
 cd ..
 
 cat > kali-config/common/hooks/xfce.chroot << EOF 
