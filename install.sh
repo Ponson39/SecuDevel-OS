@@ -8,10 +8,6 @@ git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 cd live-build-config
 
 cat > kali-config/variant-default/package-lists/kali.list.chroot << EOF
-  kali-root-login
-  kali-menu
-  kali-debtags
-  kali-archive-keyring
   debian-installer-launcher
   dconf-editor
   openssh-server
@@ -22,7 +18,6 @@ cat > kali-config/variant-default/package-lists/kali.list.chroot << EOF
   lightdm
   mousepad
   john
-  debian-installer-launcher
   alsa-tools
   locales-all
   xorg
