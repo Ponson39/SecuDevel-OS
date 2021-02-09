@@ -8,6 +8,7 @@ git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 cd live-build-config
 
 cat > kali-config/variant-default/package-lists/kali.list.chroot << EOF
+  bw-fcutter
   dconf-editor
   openssh-server
   kali-linux-core
