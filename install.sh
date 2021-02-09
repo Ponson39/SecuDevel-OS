@@ -8,10 +8,15 @@ git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 cd live-build-config
 
 cat > kali-config/variant-default/package-lists/kali.list.chroot << EOF
+  kali-root-login
+  kali-linux-core
+  kali-menu
+  kali-debtags
+  kali-archive-keyring
+  debian-installer-launcher
   bw-fcutter
   dconf-editor
   openssh-server
-  kali-linux-core
   xfce4
   xfce4-terminal
   xfce4-power-manager-plugins
