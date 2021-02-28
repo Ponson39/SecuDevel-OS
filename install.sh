@@ -37,11 +37,11 @@ wget https://i.imgur.com/LEhta3r.jpg
 mv LEhta3r.jpg config/includes.chroot/usr/share/wallpapers/kali/contents/images/logo.jpg
 
 echo Clonando tema GTK3
-mkdir -p kali-config/common/includes.chroot/usr/share/themes/
+mkdir -p config/includes.chroot/usr/share/themes/
 git clone https://github.com/vinceliuice/Matcha-gtk-theme.git
 cd Matcha-gtk-theme
 chmod a+x install.sh
-./install.sh -d ../kali-config/common/includes.chroot/usr/share/themes/ -t aliz
+./install.sh -d ../config/includes.chroot/usr/share/themes/ -t aliz
 cd ..
 
 cat > config/hooks/xfce.chroot << EOF 
