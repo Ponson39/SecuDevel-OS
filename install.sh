@@ -7,7 +7,7 @@ git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 
 cd live-build-config
 
-lb config
+#lb config
 
 cat > config/package-lists/kali.list.chroot << EOF
   kali-root-login
@@ -74,4 +74,4 @@ mv paquetes/* config/packages.chroot/
 echo se va a construir el paquete
 
 #./build.sh -v 
-lb build --verbose
+lb build --verbose --debug
