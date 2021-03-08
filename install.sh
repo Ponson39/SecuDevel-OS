@@ -7,7 +7,7 @@ git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 
 cd live-build-config
 
-#lb config
+lb config --apt aptitude
 
 cat > config/package-lists/kali.list.chroot << EOF
   kali-root-login
@@ -28,6 +28,7 @@ cat > config/package-lists/kali.list.chroot << EOF
   alsa-tools
   locales-all
   xorg
+  squashfs-tools
 EOF
 
 echo Añadiendo imagen a Wallpapers
@@ -74,4 +75,4 @@ mv paquetes/* config/packages.chroot/
 echo se va a construir el paquete
 
 #./build.sh -v 
-lb build --verbose --debug
+lb build --verbose 2>&1 | tee build.log
