@@ -34,9 +34,9 @@ EOF
 
 echo Añadiendo imagen a Wallpapers
 
-mkdir -p config/includes.chroot/usr/share/wallpapers/kali/contents/images
+mkdir -p config/includes.chroot/usr/share/wallpapers/gidis/
 wget https://i.imgur.com/LEhta3r.jpg
-mv LEhta3r.jpg config/includes.chroot/usr/share/wallpapers/kali/contents/images/logo.jpg
+mv LEhta3r.jpg config/includes.chroot/usr/share/wallpapers/gidis/logo.jpg
 
 echo Clonando tema GTK3
 mkdir -p config/includes.chroot/usr/share/themes/
@@ -57,6 +57,7 @@ cat > config/hooks/xfce.chroot << EOF
   systemctl start lightdm.service
   xconf-query -c xsettings -p /Net/ThemeName -s "Matcha-dark-aliz"
   xfconf-query -c xfwm4 -p /general/theme -s "Matcha-dark-aliz"
+  xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/last-image -s /usr/share/wallpapers/gidis/logo.jpg
 EOF
 
 cat > config/hooks/plymouth.chroot << EOF 
