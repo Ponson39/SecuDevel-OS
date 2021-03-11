@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=GIDIS Theme
+Description=GIDIS theme
+ModuleName=script
+
+[script]
+ImageDir=/lib/plymouth/themes/gidis
+ScriptFile=/lib/plymouth/themes/gidis/gidis.script
