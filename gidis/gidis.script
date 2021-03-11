@@ -58,7 +58,7 @@ else {
 }
 
 ratio =  logo.original_image.GetWidth() / logo.original_image.GetHeight();
-reduction = 0.2;
+reduction = 0.12;
 logo.image = logo.original_image.Scale(reduction * Window.GetMaxWidth() , reduction / ratio *  Window.GetMaxWidth());
 logo.sprite = SpriteNew();
 logo.sprite.SetImage(logo.image);
