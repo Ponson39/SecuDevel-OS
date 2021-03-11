@@ -88,4 +88,4 @@ mv paquetes/* config/packages.chroot/
 echo se va a construir el paquete
 
 #./build.sh -v 
-lb build --verbose --interactive shell 2>&1 | tee build.log
+lb build --verbose 2>&1 | tee build.log
