@@ -7,7 +7,7 @@ git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 
 cd live-build-config
 
-lb config --apt aptitude
+lb config --apt aptitude --bootappend-live "username=secudevel locales=es_CO.UTF-8 keyboards-layouts=latam autologin" --iso-publisher "SecuDEVEL" --debian-installer-gui true
 
 cat > config/package-lists/kali.list.chroot << EOF
   kali-root-login
@@ -29,6 +29,7 @@ cat > config/package-lists/kali.list.chroot << EOF
   locales-all
   xorg
   squashfs-tools
+  plymouth
 EOF
 
 echo Añadiendo imagen a Wallpapers
@@ -45,6 +46,11 @@ chmod a+x install.sh
 ./install.sh -d ../config/includes.chroot/usr/share/themes/ -t aliz
 cd ..
 
+echo Añadiendo tema de plymouth
+
+mkdir -p config/includes.chroot/usr/share/plymouth/themes/
+sudo cp -r ../gidis config/includes.chroot/usr/share/plymouth/themes/
+
 cat > config/hooks/xfce.chroot << EOF 
   #!/bin/bash
   systemctl enable ligthdm.service
@@ -52,6 +58,12 @@ cat > config/hooks/xfce.chroot << EOF
   xconf-query -c xsettings -p /Net/ThemeName -s "Matcha-dark-aliz"
   xfconf-query -c xfwm4 -p /general/theme -s "Matcha-dark-aliz"
 EOF
+
+cat > config/hooks/plymouth.chroot << EOF 
+  #!/bin/bash
+  plymouth-set-default-theme -R gidis
+EOF
+
 
 mkdir -p config/debian-installer/
 wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/raw/master/kali-linux-full-unattended.preseed -O config/debian-installer/preseed.cfg
@@ -75,4 +87,4 @@ mv paquetes/* config/packages.chroot/
 echo se va a construir el paquete
 
 #./build.sh -v 
-lb build --verbose 2>&1 | tee build.log
+lb build --verbose --interactive shell 2>&1 | tee build.log
