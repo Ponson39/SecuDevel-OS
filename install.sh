@@ -55,7 +55,7 @@ echo Añadiendo tema de plymouth
 mkdir -p config/includes.chroot/usr/share/plymouth/themes/
 sudo cp -r ../gidis config/includes.chroot/usr/share/plymouth/themes/
 
-cat > config/hooks/normal/xfce.chroot << EOF 
+cat > config/hooks/live/xfce.hook.binary << EOF 
   #!/bin/bash
   systemctl enable ligthdm.service
   systemctl start lightdm.service
@@ -65,13 +65,13 @@ cat > config/hooks/normal/xfce.chroot << EOF
 EOF
 
 
-cat > config/hooks/normal/plymouth.chroot << EOF 
+cat > config/hooks/live/plymouth.hooks.binary << EOF 
   #!/bin/bash
   plymouth-set-default-theme -R gidis
 EOF
 
-sudo chmod +x config/hooks/normal/xfce.chroot
-sudo chmod +x config/hooks/normal/plymouth.chroot
+sudo chmod +x config/hooks/live/xfce.hooks.binary
+sudo chmod +x config/hooks/live/plymouth.hooks.binary
 
 mkdir -p config/debian-installer/
 wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/raw/master/kali-linux-full-unattended.preseed -O config/debian-installer/preseed.cfg
