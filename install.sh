@@ -13,7 +13,7 @@ lb config \
            --iso-publisher "SecuDEVEL" \
            --debian-installer-gui true
 
-cat > config/package-lists/kali.list.chroot << EOF
+cat > config/package-lists/secudevel.list.chroot << EOF
   kali-root-login
   kali-linux-core
   kali-menu
@@ -55,7 +55,7 @@ echo Añadiendo tema de plymouth
 mkdir -p config/includes.chroot/usr/share/plymouth/themes/
 sudo cp -r ../gidis config/includes.chroot/usr/share/plymouth/themes/
 
-cat > config/hooks/xfce.chroot << EOF 
+cat > config/hooks/live/xfce.chroot << EOF 
   #!/bin/bash
   systemctl enable ligthdm.service
   systemctl start lightdm.service
@@ -64,11 +64,14 @@ cat > config/hooks/xfce.chroot << EOF
   xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/last-image -s /usr/share/wallpapers/gidis/logo.jpg
 EOF
 
-cat > config/hooks/plymouth.chroot << EOF 
+
+cat > config/hooks/live/plymouth.chroot << EOF 
   #!/bin/bash
   plymouth-set-default-theme -R gidis
 EOF
 
+sudo chmod +x config/hooks/live/xfce.chroot
+sudo chmod +x config/hooks/live/plymouth.chroot
 
 mkdir -p config/debian-installer/
 wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/raw/master/kali-linux-full-unattended.preseed -O config/debian-installer/preseed.cfg
