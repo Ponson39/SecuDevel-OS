@@ -9,7 +9,7 @@ cd live-build-config
 
 lb config \
            --apt aptitude \
-           --bootappend-live "username=secudevel locales=es_CO.UTF-8 keyboards-layouts=latam autologin" \
+           --bootappend-live "boot=live components quiet splash noeject username=secudevel locales=es_CO.UTF-8 keyboards-layouts=latam autologin" \
            --iso-publisher "SecuDEVEL" \
            --debian-installer-gui true
 
