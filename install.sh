@@ -7,7 +7,11 @@ git clone https://gitlab.com/kalilinux/build-scripts/live-build-config.git
 
 cd live-build-config
 
-lb config --apt aptitude --bootappend-live "username=secudevel locales=es_CO.UTF-8 keyboards-layouts=latam autologin" --iso-publisher "SecuDEVEL" --debian-installer-gui true
+lb config \
+           --apt aptitude \
+           --bootappend-live "username=secudevel locales=es_CO.UTF-8 keyboards-layouts=latam autologin" \
+           --iso-publisher "SecuDEVEL" \
+           --debian-installer-gui true
 
 cat > config/package-lists/kali.list.chroot << EOF
   kali-root-login
