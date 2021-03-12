@@ -39,7 +39,7 @@ EOF
 echo Añadiendo imagen a Wallpapers
 
 mkdir -p config/includes.chroot/usr/share/wallpapers/gidis/
-wget -nc https://i.imgur.com/LEhta3r.jpg
+wget -N https://i.imgur.com/LEhta3r.jpg
 mv LEhta3r.jpg config/includes.chroot/usr/share/wallpapers/gidis/logo.jpg
 
 echo Clonando tema GTK3
@@ -85,7 +85,7 @@ cat > prueba.txt <<EOF
     https://az764295.vo.msecnd.net/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code_1.52.1-1608136922_amd64.deb
 EOF
 
-wget -i -nc prueba.txt
+wget -i -N prueba.txt
 
 cd ..
 
