@@ -55,7 +55,7 @@ echo Añadiendo tema de plymouth
 mkdir -p config/includes.chroot/usr/share/plymouth/themes/
 sudo cp -r ../gidis config/includes.chroot/usr/share/plymouth/themes/
 
-cat > config/hooks/live/xfce.hook.binary << EOF 
+cat > config/includes.chroot/lib/live/config/xfce.hooks.binary << EOF 
   #!/bin/bash
   systemctl enable ligthdm.service
   systemctl start lightdm.service
@@ -65,7 +65,7 @@ cat > config/hooks/live/xfce.hook.binary << EOF
 EOF
 
 
-cat > config/hooks/live/plymouth.hooks.binary << EOF 
+cat > config/includes.chroot/lib/live/config/plymouth.hooks.binary << EOF 
   #!/bin/bash
   plymouth-set-default-theme -R gidis
 EOF
