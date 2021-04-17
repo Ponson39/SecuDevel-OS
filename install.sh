@@ -70,8 +70,8 @@ cat > config/includes.chroot/lib/live/config/plymouth.hooks.binary << EOF
   plymouth-set-default-theme -R gidis
 EOF
 
-sudo chmod +x config/hooks/live/xfce.hooks.binary
-sudo chmod +x config/hooks/live/plymouth.hooks.binary
+sudo chmod +x config/includes.chroot/lib/live/config/xfce.hooks.binary
+sudo chmod +x config/includes.chroot/lib/live/config/plymouth.hooks.binary
 
 mkdir -p config/debian-installer/
 wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/raw/master/kali-linux-full-unattended.preseed -O config/debian-installer/preseed.cfg
