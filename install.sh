@@ -55,7 +55,7 @@ echo Añadiendo tema de plymouth
 mkdir -p config/includes.chroot/usr/share/plymouth/themes/
 sudo cp -r ../gidis config/includes.chroot/usr/share/plymouth/themes/
 
-cat > config/includes.chroot/lib/live/config/xfce.hooks.binary << EOF 
+cat > config/hooks/xfce.chroot << EOF 
   #!/bin/bash
   systemctl enable ligthdm.service
   systemctl start lightdm.service
@@ -65,16 +65,17 @@ cat > config/includes.chroot/lib/live/config/xfce.hooks.binary << EOF
 EOF
 
 
-cat > config/includes.chroot/lib/live/config/plymouth.hooks.binary << EOF 
+cat > config/plymouth.chroot << EOF 
   #!/bin/bash
   plymouth-set-default-theme -R gidis
 EOF
 
-sudo chmod +x config/includes.chroot/lib/live/config/xfce.hooks.binary
-sudo chmod +x config/includes.chroot/lib/live/config/plymouth.hooks.binary
+sudo chmod +x config/hooks/xfce.chroot
+sudo chmod +x config/hooks/plymouth.chroot
+cp -rf /root/.config /etc/skel/
 
 mkdir -p config/debian-installer/
-wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/raw/master/kali-linux-full-unattended.preseed -O config/debian-installer/preseed.cfg
+wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/blob/master/kali-linux-full-default.preseed-O config/debian-installer/preseed.cfg
 sed -i 's/make-user boolean false/make-user boolean true/' config/debian-installer/preseed.cfg
 echo "d-i passwd/root-login boolean false" >> config/debian-installer/preseed.cfg
 
