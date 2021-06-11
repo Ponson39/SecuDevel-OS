@@ -65,7 +65,7 @@ cat > config/hooks/xfce.chroot << EOF
 EOF
 
 
-cat > config/plymouth.chroot << EOF 
+cat > config/hooks/plymouth.chroot << EOF 
   #!/bin/bash
   plymouth-set-default-theme -R gidis
 EOF
@@ -96,4 +96,4 @@ mv paquetes/* config/packages.chroot/
 echo se va a construir el paquete
 
 #./build.sh -v 
-lb build --verbose 2>&1 | tee build.log
+#lb build --verbose 2>&1 | tee build.log
