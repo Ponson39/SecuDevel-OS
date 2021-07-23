@@ -75,7 +75,7 @@ sudo chmod +x config/hooks/plymouth.chroot
 cp -rf /root/.config /etc/skel/
 
 mkdir -p config/debian-installer/
-wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/blob/master/kali-linux-full-default.preseed -O config/debian-installer/preseed.cfg
+wget https://gitlab.com/kalilinux/recipes/kali-preseed-examples/-/raw/master/kali-linux-full-default.preseed -O config/debian-installer/preseed.cfg
 sed -i 's/make-user boolean false/make-user boolean true/' config/debian-installer/preseed.cfg
 echo "d-i passwd/root-login boolean false" >> config/debian-installer/preseed.cfg
 
