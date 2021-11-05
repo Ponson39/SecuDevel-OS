@@ -1,0 +1,43 @@
+#!/bin/sh
+
+configure_zsh() {
+    # Stop if zsh is not present
+    if [ ! -x /usr/bin/zsh ]; then
+	return
+    fi
+    # Stop if user has opted out of zsh
+    if echo "${LIVE_CONFIG_CMDLINE}" | grep -qs 'nozsh'; then
+	return
+    fi
+    chsh --shell /usr/bin/zsh secudevel
+    chsh --shell /usr/bin/zsh root
+}
+
+configure_usergroups() {
+    addgroup --system kaboxer || true  # Ensures the group exists
+    addgroup --system wireshark || true  # Ensures the group exists
+    # adm - read access to log files
+    # kaboxer - for kaboxer
+    # dialout - for serial port access
+    # wireshark - capture sessions without being root
+    secudevel_groups="adm,kaboxer,dialout,wireshark"
+
+    usermod -a -G $secudevel_groups secudevel
+}
+
+# Avoid configuring multiple times in case persistence is enabled
+if [ -e /var/lib/live/config/secudevel-user-setup ]; then
+    exit 0
+fi
+
+# Set "1234" as password for the user secudevel
+usermod -p '$6$v9HhHynATPiEXfiJ$WVsm0.bmbxUBtF/gcjM.qxfD5/7ap4iu5UYswwxiAX55N5339HPOKJcRQpXjrvvwM/iIom2EW2G6oAFh5RBQF1' secudevel
+
+# Change default shell to zsh
+configure_zsh
+
+# Add kali user to additional groups
+configure_usergroups
+
+# Remember that this script has been run
+touch /var/lib/live/config/secudevel-user-setup
