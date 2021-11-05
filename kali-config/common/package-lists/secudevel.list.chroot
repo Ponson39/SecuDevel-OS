@@ -37,3 +37,16 @@ xorg
 squashfs-tools
 plymouth
 xfconf
+
+#Programas Kali
+amap
+braa
+cdpr
+cisco-torch
+dotdotpwn
+maltego
+masscan
+nikto
+nmap
+metasploit-framework
+
