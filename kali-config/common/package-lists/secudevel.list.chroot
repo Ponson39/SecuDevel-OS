@@ -49,4 +49,5 @@ masscan
 nikto
 nmap
 metasploit-framework
+atmel-firmware
 
