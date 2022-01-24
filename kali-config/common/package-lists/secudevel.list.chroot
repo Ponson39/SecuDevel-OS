@@ -1,6 +1,17 @@
 # Live image
 # You always want these:
-kali-linux-core
+#kali-linux-core
+
+#Remplazo de kali-linux-core
+dbus-user-session
+fonts-noto-color-emoji
+xdg-utils
+xterm
+haveged
+firefox-esr
+xserver-xorg-legacy
+kali-grant-root
+
 kali-desktop-live
 
 # Metapackages
