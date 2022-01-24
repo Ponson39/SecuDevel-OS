@@ -13,13 +13,13 @@ kali-desktop-live
 #kali-linux-everything
 
 # Graphical desktop
-kali-desktop-xfce
+#kali-desktop-xfce
 
 # Kali applications
 #<package>
-kali-root-login
-kali-menu
-kali-debtags
+#kali-root-login
+#kali-menu
+#kali-debtags
 #kali-archive-keyring
 debian-installer-launcher
 b43-fwcutter
