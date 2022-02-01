@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+chmod -R 755 /usr/share/themes/Matcha-dark-aliz/
+chmod -R 755 /usr/share/icons/Tela-red-dark/
+chmod -R 755 /usr/share/images/desktop-base/logo.png
+chmod -R 755 /usr/share/images/desktop-base/SecuDevel.jpeg
+
+echo "Se han cambiado los permisos satisfactoriamente"
