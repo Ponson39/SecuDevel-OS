@@ -2,9 +2,10 @@
 
 set -e
 
-chmod -R 755 /usr/share/themes/Matcha-dark-aliz/
-chmod -R 755 /usr/share/icons/Tela-red-dark/
-chmod -R 755 /usr/share/images/desktop-base/logo.png
-chmod -R 755 /usr/share/images/desktop-base/SecuDevel.jpeg
+chmod -R 755 /usr/share/themes/
+chmod -R 755 /usr/share/icons/
+chmod -R 755 /usr/share/images/desktop-base/
+chmod -R 755 /usr/share/plymouth/
+chmod -R 755 /etc/skel/
 
 echo "Se han cambiado los permisos satisfactoriamente"
