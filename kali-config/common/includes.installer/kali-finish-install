@@ -62,11 +62,11 @@ configure_usergroups() {
     # kaboxer - for kaboxer
     # dialout - for serial access
     # wireshark - capture sessions in wireshark
-    kali_groups="adm,kaboxer,dialout,wireshark"
+    secudevel_groups="adm,kaboxer,dialout,wireshark"
 
     for user in $(get_user_list); do
-	echo "INFO: adding user '$user' to groups '$kali_groups'"
-	usermod -a -G "$kali_groups" $user || true
+	echo "INFO: adding user '$user' to groups '$secudevel_groups'"
+	usermod -a -G "$secudevel_groups" $user || true
     done
 }
 
