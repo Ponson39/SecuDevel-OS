@@ -1,5 +1,5 @@
 #!/bin/bash
 
-apt remove kali-themes-common kali-tweaks kali-wallpapers
+apt remove kali-themes-common kali-themes kali-tweaks kali-wallpapers-2020.4 kali-wallpapers-2021.4 kali-menu
 
 echo "Se han borrado los paquetes satisfactoriamente"
