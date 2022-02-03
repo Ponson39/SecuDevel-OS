@@ -1,6 +1,6 @@
 favorites=xfce4-terminal-emulator.desktop,root-terminal.desktop,xfce4-file-manager.desktop,xfce-text-editor.desktop,xfce4-web-browser.desktop
 recent=root-terminal.desktop,xfce-ui-settings.desktop,xfce-display-settings.desktop,xfce-settings-manager.desktop,xfce4-web-browser.desktop,xfce-keyboard-settings.desktop
-button-icon=/usr/share/images/desktop-base/
+button-icon=/usr/share/images/desktop-base/logo.png
 button-single-row=false
 show-button-title=false
 show-button-icon=true
