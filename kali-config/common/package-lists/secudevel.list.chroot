@@ -1,6 +1,6 @@
 # Live image
 # You always want these:
-#kali-linux-core
+kali-linux-core
 
 #Remplazo de kali-linux-core
 dbus-user-session
@@ -41,7 +41,6 @@ xfce4-terminal
 xfce4-power-manager-plugins
 lightdm
 mousepad
-john
 alsa-tools
 locales-all
 xorg
@@ -49,7 +48,7 @@ squashfs-tools
 plymouth
 xfconf
 
-#Programas Kali
+#Programas Kali (Alfa Version)
 amap
 braa
 cdpr
@@ -59,6 +58,13 @@ maltego
 masscan
 nikto
 nmap
-metasploit-framework
 atmel-firmware
-
+john
+hydra
+metasploit-framework
+aeskeyfind
+aesfix
+aespipe
+wireshark
+sqlpmap
+nikto
