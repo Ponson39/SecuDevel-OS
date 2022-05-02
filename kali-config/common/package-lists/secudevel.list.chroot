@@ -1,8 +1,5 @@
-# Live image
-# You always want these:
 kali-linux-core
 
-#Remplazo de kali-linux-core
 dbus-user-session
 fonts-noto-color-emoji
 xdg-utils
@@ -14,24 +11,7 @@ kali-grant-root
 
 kali-desktop-live
 
-# Metapackages
-# You can customize the set of Kali metapackages (groups of tools) to install
-# For the complete list see: https://tools.kali.org/kali-metapackages
-#kali-linux-core
-#kali-tools-top10
-#kali-linux-default
-#kali-linux-large
-#kali-linux-everything
-
-# Graphical desktop
-#kali-desktop-xfce
-
 # Kali applications
-#<package>
-#kali-root-login
-#kali-menu
-#kali-debtags
-#kali-archive-keyring
 debian-installer-launcher
 b43-fwcutter
 dconf-editor
