@@ -24,5 +24,5 @@ Disponemos de una pagina realizada por la herramienta de *Microsoft*, Sway, dond
 
 [](https://sway.office.com/t0mTrcohSdxbLd3s?ref=Link)
 
-![](\Sway.png)
+![](/Sway.png)
 
