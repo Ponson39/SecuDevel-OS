@@ -1,4 +1,5 @@
 # SecuDevel OS
+[![GitHub issues](https://img.shields.io/github/issues/Ponson39/SecuDevel-OS?style=flat-square)](https://github.com/Ponson39/SecuDevel-OS/issues)
 
 SecuDevel OS es un proyecto realizado por estudiantes del Grupo de Investigacion GIDIS, de la Corporación Universitaria Republicana, ubicada en la ciudad de Bogotá.
 Este proyecto tiene como finalidad crear una distribucion Linux, basada en [Kali Linux](https://www.kali.org/), bindando herramientas varias para el desarrollo de software seguro.
