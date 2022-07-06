@@ -10,11 +10,7 @@ Este proyecto tiene como finalidad crear una distribucion Linux, basada en [Kali
 
 ## Uso
 
-El repositorio cuenta con los archivos de configuracion usados en el proyecto, estos pueden ser aplicados mediante el paquete 
-```bash
-live-build
-```
-Este se encuentra en distribuciones basadas en Debian Linux.
+El repositorio cuenta con los archivos de configuracion usados en el proyecto, estos pueden ser aplicados mediante el paquete `live-build`. Este se encuentra en distribuciones basadas en Debian Linux.
 
 ## Preview
 
